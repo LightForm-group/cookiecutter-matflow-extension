@@ -35,16 +35,14 @@ def get_changelog():
         contents = handle.read()
     return contents
 
-
-{ % - set license_classifiers = {
+{% set license_classifiers = {
     'MIT license': 'License :: OSI Approved :: MIT License',
     'BSD license': 'License :: OSI Approved :: BSD License',
     'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
     'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
     'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-    'Mozilla Public License 2.0 (MPL 2.0)': 'OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',
+    'Mozilla Public License 2.0 (MPL 2.0)': 'OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)'
 } %}
-
 setup(
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
     author_email='{{ cookiecutter.email }}',
@@ -54,9 +52,9 @@ setup(
         'Intended Audience :: Science/Research',
         'Topic :: Scientific/Engineering',
         'Operating System :: OS Independent',
-        {%- if cookiecutter.open_source_license in license_classifiers % }
+        {%- if cookiecutter.open_source_license in license_classifiers %}
         '{{ license_classifiers[cookiecutter.open_source_license] }}',
-        {%- endif % }
+        {%- endif %}
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
@@ -66,26 +64,28 @@ setup(
     description="{{ cookiecutter.project_short_description }}",
     entry_points="""
         [matflow.extension]
-        {{ cookiecutter.software }}={{ cookiecutter.project_slug }}
-    """
-    install_requires=requirements,
-    {%- if cookiecutter.open_source_license in license_classifiers % }
+        {{ cookiecutter.software_slug }}={{ cookiecutter.project_slug }}
+    """,
+    install_requires=[
+        'matflow',
+    ],
+    {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
-    {%- endif % }
+    {%- endif %}
     long_description=get_long_description() + '\n\n' + get_changelog(),
     long_description_content_type='text/markdown',
-    keywords='{{ cookiecutter.project_slug }}',
+    keywords='matflow, materials-science, computational-workflow',
     name='{{ cookiecutter.project_name }}',
-    packages=find_packages(),
+    packages=find_packages(),    
     {%- if cookiecutter.github_org is defined %}
     project_urls={
         'GitHub': 'https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.project_slug }}'
     },
-    { % else % }
+    {%- else %}
     project_urls={
         'GitHub': 'https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}'
     },
-    { % endif % }
+    {%- endif %}
     version=get_version(),
     zip_safe=True,
 )
