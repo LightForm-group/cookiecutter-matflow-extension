@@ -14,15 +14,17 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+from {{cookiecutter.project_slug}} import __version__
 
 # -- Project information -----------------------------------------------------
 
 project = '{{cookiecutter.project_name}}'
-copyright = '2020, Adam J. Plowman'
-author = 'Adam J. Plowman'
+copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
+
+author = '{{ cookiecutter.full_name }}'
 
 # The full version, including alpha/beta/rc tags
-release = 'v0.1.0'
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------
