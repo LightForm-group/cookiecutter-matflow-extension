@@ -1,0 +1,24 @@
+{
+    "full_name": "Adam J. Plowman",
+    "email": "adam.plowman@manchester.ac.uk",
+    "github_username": "aplowman",
+    "github_org": "LightForm-group",
+    "software": "Enter the name of the software this extension interacts with.",
+    "project_name": "matflow-ext-{{ cookiecutter.software.lower().replace(' ', '_') }}",
+    "project_slug": "{{ cookiecutter.project_name.replace('-', '_') }}",
+    "project_short_description": "Matflow extension for {{cookiecutter.software}}.",
+    "pypi_username": "{{ cookiecutter.github_username }}",
+    "use_pytest": "n",
+    "use_pypi_deployment_with_travis": "y",
+    "add_pyup_badge": "n",
+    "create_author_file": "y",
+    "open_source_license": [
+        "MIT license",
+        "BSD license",
+        "ISC license",
+        "Apache Software License 2.0",
+        "GNU General Public License v3",
+        "Mozilla Public License 2.0 (MPL 2.0)",
+        "Not open source"
+    ]
+}

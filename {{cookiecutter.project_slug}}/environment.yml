@@ -1,0 +1,10 @@
+name: {{ cookiecutter.project_slug | append: "_env" }}
+dependencies:
+- python>=3.6
+- pip
+- pylint
+- ipykernel
+- rope
+- autopep8
+- twine
+- wheel
