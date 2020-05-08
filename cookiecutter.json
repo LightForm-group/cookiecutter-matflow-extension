@@ -6,7 +6,7 @@
     "software": "",
     "software_lower": "{{ cookiecutter.software.lower().replace(' ', '_') }}",
     "software_slug": "{{ cookiecutter.software_lower.replace('-', '_') }}",
-    "project_name": "matflow-ext-{{ cookiecutter.software_lower }}",
+    "project_name": "matflow-{{ cookiecutter.software_lower }}",
     "project_slug": "{{ cookiecutter.project_name.replace('-', '_') }}",
     "project_short_description": "Matflow extension for {{ cookiecutter.software }}.",
     "pypi_username": "{{ cookiecutter.github_username }}",
