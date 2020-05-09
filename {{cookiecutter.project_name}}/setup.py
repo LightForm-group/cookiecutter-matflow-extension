@@ -79,11 +79,11 @@ setup(
     packages=find_packages(),    
     {%- if cookiecutter.github_org is defined %}
     project_urls={
-        'GitHub': 'https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.project_slug }}'
+        'GitHub': 'https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.project_name }}'
     },
     {%- else %}
     project_urls={
-        'GitHub': 'https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}'
+        'GitHub': 'https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_name }}'
     },
     {%- endif %}
     version=get_version(),
