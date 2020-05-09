@@ -87,5 +87,4 @@ setup(
     },
     {%- endif %}
     version=get_version(),
-    zip_safe=True,
 )
