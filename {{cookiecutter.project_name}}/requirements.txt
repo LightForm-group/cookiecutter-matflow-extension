@@ -4,3 +4,5 @@ rope
 autopep8
 twine
 wheel
+sphinx
+recommonmark

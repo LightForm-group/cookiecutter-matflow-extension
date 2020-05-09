@@ -8,3 +8,5 @@ dependencies:
 - autopep8
 - twine
 - wheel
+- sphinx
+- recommonmark
