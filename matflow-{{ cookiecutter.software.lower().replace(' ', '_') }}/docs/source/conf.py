@@ -14,7 +14,8 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-from {{cookiecutter.project_slug}} import __version__
+
+from {{ cookiecutter.project_name.replace('-', '_') }} import __version__
 
 # -- Project information -----------------------------------------------------
 

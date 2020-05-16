@@ -4,10 +4,11 @@ import os
 import re
 from setuptools import find_packages, setup
 
+{% set project_slug = cookiecutter.project_name.replace('-', '_') -%}
 
 def get_version():
 
-    ver_file = '{{cookiecutter.project_slug}}/_version.py'
+    ver_file = '{{ project_slug }}/_version.py'
     with open(ver_file) as handle:
         ver_str_line = handle.read()
 
@@ -64,7 +65,7 @@ setup(
     description="{{ cookiecutter.project_short_description }}",
     entry_points="""
         [matflow.extension]
-        {{ cookiecutter.software_slug }}={{ cookiecutter.project_slug }}
+        {{ cookiecutter.software.lower().replace(' ', '_').replace('-', '_') }}={{ project_slug }}
     """,
     install_requires=[
         'matflow',
