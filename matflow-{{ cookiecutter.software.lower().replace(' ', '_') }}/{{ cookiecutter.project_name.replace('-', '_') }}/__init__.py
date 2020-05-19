@@ -4,7 +4,7 @@ from functools import partial
 
 from {{ cookiecutter.project_name.replace('-', '_') }}._version import __version__
 
-from matflow import (
+from matflow.extensions import (
     input_mapper,
     output_mapper,
     cli_format_mapper,
